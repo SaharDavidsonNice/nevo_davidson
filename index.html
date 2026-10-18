@@ -1,97 +1,784 @@
 <!doctype html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nevo Davidson</title>
-  <meta name="description" content="Nevo Davidson — links and contact.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>נבו דוידזון למועצת התלמידים</title>
+  <meta name="description" content="אמנת הבחירות של נבו דוידזון, י׳11, למועצת התלמידים של בית ספר הראשונים.">
+  <meta name="theme-color" content="#0b1a44">
+  <meta property="og:title" content="נבו דוידזון למועצת התלמידים">
+  <meta property="og:description" content="אמנת הבחירות של נבו דוידזון, י׳11, בית ספר הראשונים.">
+  <meta property="og:locale" content="he_IL">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231d3fa8'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>נ</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&family=Secular+One&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f6f5f2;
-      --card: #ffffff;
-      --text: #1d1d1f;
-      --muted: #6b6b70;
-      --accent: #2f5bea;
-      --accent-text: #ffffff;
-      --border: #e4e2dd;
+      --navy: #0b1a44;
+      --navy-2: #13286a;
+      --blue: #1d3fa8;
+      --sky: #5aa9ff;
+      --paper: #ffffff;
+      --ink: #0e1630;
+      --muted: #55607e;
+      --sun: #ffc93c;
+      --line: #dfe5f3;
+      --display: "Secular One", "Heebo", Arial, sans-serif;
+      --body: "Heebo", "Assistant", Arial, sans-serif;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #121214;
-        --card: #1c1c1f;
-        --text: #f2f2f3;
-        --muted: #a0a0a8;
-        --accent: #6d8dff;
-        --accent-text: #0b0b0c;
-        --border: #2c2c30;
-      }
-    }
+
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
       margin: 0;
-      min-height: 100vh;
+      font-family: var(--body);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--ink);
+      background: #eef2fb;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 6px; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 100svh;
       display: grid;
-      place-items: center;
-      padding: 24px 16px;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.5;
+      align-items: center;
+      padding: 72px 20px 96px;
+      color: var(--paper);
+      background: var(--navy);
+      overflow: hidden;
     }
-    main {
-      width: 100%;
-      max-width: 420px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px 24px;
-      text-align: center;
-    }
-    .avatar {
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 16px;
+    .aurora { position: absolute; inset: -20%; z-index: -2; filter: blur(70px); opacity: .9; }
+    .aurora span {
+      position: absolute;
       border-radius: 50%;
+      mix-blend-mode: screen;
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    .aurora span:nth-child(1) { width: 55vmax; height: 55vmax; background: #1d3fa8; top: 0; right: 5%; }
+    .aurora span:nth-child(2) { width: 40vmax; height: 40vmax; background: #2c7be5; bottom: 0; left: 0; animation-duration: 22s; }
+    .aurora span:nth-child(3) { width: 28vmax; height: 28vmax; background: #6a4cff; top: 30%; left: 35%; animation-duration: 26s; opacity: .55; }
+    @keyframes drift {
+      to { transform: translate3d(-8vmax, 6vmax, 0) scale(1.15); }
+    }
+    .grain {
+      position: absolute; inset: 0; z-index: -1; opacity: .5;
+      background-image: radial-gradient(rgba(255,255,255,.14) 1px, transparent 1px);
+      background-size: 22px 22px;
+      mask-image: linear-gradient(to bottom, #000 30%, transparent 95%);
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1120px;
+      margin-inline: auto;
       display: grid;
-      place-items: center;
-      background: var(--accent);
-      color: var(--accent-text);
-      font-size: 32px;
-      font-weight: 700;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 48px;
+      align-items: center;
     }
-    h1 { margin: 0 0 4px; font-size: 1.6rem; }
-    .tagline { margin: 0 0 24px; color: var(--muted); }
-    .links { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
-    .links a {
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      padding: 6px 14px 6px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.22);
+      font-weight: 500;
+      font-size: .95rem;
+      backdrop-filter: blur(6px);
+    }
+    .hero-kicker .dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--sun);
+      box-shadow: 0 0 0 0 rgba(255,201,60,.7);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      70% { box-shadow: 0 0 0 10px rgba(255,201,60,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,201,60,0); }
+    }
+    .hero h1 { margin: 0; font-weight: 400; }
+    .hero h1 .pre {
       display: block;
-      padding: 14px 16px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      transition: border-color .15s, transform .15s;
+      font-family: var(--body);
+      font-weight: 500;
+      font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+      color: #c9d6ff;
+      margin-bottom: 6px;
     }
-    .links a:hover, .links a:focus-visible { border-color: var(--accent); transform: translateY(-1px); }
-    .links a.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
-    footer { margin-top: 24px; font-size: .8rem; color: var(--muted); }
+    .hero h1 .name {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(3.4rem, 11vw, 7.5rem);
+      line-height: .95;
+      letter-spacing: -.01em;
+    }
+    .hero h1 .name .w { display: inline-block; }
+    .hero h1 .name .ch {
+      display: inline-block;
+      background: linear-gradient(180deg, #ffffff 30%, #a9c8ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 26px 0 32px;
+      padding: 0;
+      list-style: none;
+    }
+    .hero-meta li {
+      padding: 8px 16px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      font-weight: 500;
+    }
+    .hero-meta b { color: var(--sun); font-weight: 700; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      --bg: var(--sun);
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 26px;
+      border: 0;
+      border-radius: 14px;
+      background: var(--bg);
+      color: var(--navy);
+      font: 700 1.05rem/1 var(--body);
+      text-decoration: none;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 10px 30px -10px rgba(255,201,60,.8);
+    }
+    .btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,.65) 50%, transparent 70%);
+      transform: translateX(120%);
+      transition: transform .7s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:hover::after { transform: translateX(-120%); }
+    .btn-ghost {
+      --bg: transparent;
+      color: var(--paper);
+      border: 1.5px solid rgba(255,255,255,.4);
+      box-shadow: none;
+    }
+
+    /* Ballot slip: the hero's signature object */
+    .slip-stage { perspective: 1100px; display: grid; place-items: center; }
+    .slip {
+      --rx: 0deg; --ry: 0deg;
+      position: relative;
+      width: min(340px, 78vw);
+      aspect-ratio: 3 / 4;
+      padding: 26px 24px;
+      border-radius: 6px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0) 40%, rgba(90,169,255,.12) 100%),
+        var(--paper);
+      color: var(--ink);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      text-align: center;
+      transform: rotateX(var(--rx)) rotateY(var(--ry)) rotate(-4deg);
+      transform-style: preserve-3d;
+      transition: transform .25s ease-out;
+      box-shadow:
+        0 40px 80px -30px rgba(0,0,0,.6),
+        0 0 0 1px rgba(255,255,255,.4) inset;
+    }
+    .slip::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 2px solid var(--blue);
+      border-radius: 3px;
+      pointer-events: none;
+    }
+    .slip .slip-top { font-size: .85rem; color: var(--muted); font-weight: 500; }
+    .slip .letters {
+      align-self: center;
+      font-family: var(--display);
+      font-size: clamp(5.5rem, 20vw, 8.5rem);
+      line-height: 1;
+      color: var(--blue);
+      transform: translateZ(40px);
+    }
+    .slip .slip-name { font-weight: 900; font-size: 1.35rem; }
+    .slip .slip-sub { font-size: .9rem; color: var(--muted); }
+    .slip .shine {
+      position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+      background: radial-gradient(circle at var(--gx, 30%) var(--gy, 20%), rgba(255,255,255,.75), transparent 45%);
+      mix-blend-mode: soft-light;
+    }
+    .stamp {
+      position: absolute;
+      inset-inline-start: -18px;
+      bottom: 22%;
+      padding: 8px 14px;
+      border: 3px solid #d92e43;
+      border-radius: 10px;
+      color: #d92e43;
+      font-family: var(--display);
+      font-size: 1.3rem;
+      transform: rotate(-14deg) translateZ(60px);
+      background: rgba(255,255,255,.85);
+    }
+
+    .scroll-cue {
+      position: absolute;
+      bottom: 22px; inset-inline: 0;
+      margin-inline: auto;
+      width: 26px; height: 42px;
+      border: 2px solid rgba(255,255,255,.5);
+      border-radius: 14px;
+    }
+    .scroll-cue::after {
+      content: "";
+      position: absolute;
+      top: 8px; left: 50%;
+      width: 4px; height: 8px; margin-left: -2px;
+      border-radius: 2px;
+      background: #fff;
+      animation: cue 1.8s infinite;
+    }
+    @keyframes cue { to { transform: translateY(14px); opacity: 0; } }
+
+    /* Load sequence (only when JS runs) */
+    .js .hero .ch { opacity: 0; transform: translateY(.5em) rotate(8deg); }
+    .js .hero .rise { opacity: 0; transform: translateY(18px); }
+    .js .hero .slip-stage { opacity: 0; transform: translateY(-120px) rotate(18deg); }
+    .js .hero .stamp { opacity: 0; transform: rotate(-14deg) translateZ(60px) scale(2.2); }
+    .loaded .hero .ch {
+      opacity: 1; transform: none;
+      transition: opacity .5s, transform .7s cubic-bezier(.2,1.4,.4,1);
+      transition-delay: calc(var(--i) * 60ms + 150ms);
+    }
+    .loaded .hero .rise {
+      opacity: 1; transform: none;
+      transition: opacity .6s, transform .6s;
+      transition-delay: calc(var(--d, 0) * 1ms);
+    }
+    .loaded .hero .slip-stage {
+      opacity: 1; transform: none;
+      transition: opacity .4s .3s, transform 1s .3s cubic-bezier(.2,1.25,.35,1);
+    }
+    .loaded .hero .stamp {
+      opacity: 1; transform: rotate(-14deg) translateZ(60px) scale(1);
+      transition: opacity .15s 1.3s, transform .35s 1.3s cubic-bezier(.3,1.6,.5,1);
+    }
+
+    /* ---------- Sections ---------- */
+    section { padding: 96px 20px; }
+    .wrap { max-width: 1120px; margin-inline: auto; }
+    .section-title {
+      margin: 0 0 12px;
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      line-height: 1.15;
+      color: var(--navy);
+    }
+    .section-lead { margin: 0 0 44px; max-width: 60ch; color: var(--muted); font-size: 1.12rem; }
+
+    .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s, transform .7s cubic-bezier(.2,.8,.2,1); }
+    .js .reveal.in { opacity: 1; transform: none; }
+
+    /* Why */
+    .why { background: var(--paper); }
+    .why blockquote {
+      position: relative;
+      margin: 0;
+      max-width: 820px;
+      padding-inline-start: 34px;
+      border-inline-start: 6px solid var(--sun);
+      font-size: clamp(1.35rem, 3.2vw, 2rem);
+      line-height: 1.5;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .why cite {
+      display: block;
+      margin-top: 18px;
+      font-style: normal;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue);
+    }
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 56px;
+    }
+    .pillar {
+      padding: 22px 22px 24px;
+      border-radius: 16px;
+      background: #f3f6fd;
+    }
+    .pillar h3 { margin: 0 0 4px; font-size: 1.25rem; color: var(--navy); }
+    .pillar p { margin: 0; color: var(--muted); }
+    .pillar svg { width: 34px; height: 34px; margin-bottom: 10px; color: var(--blue); }
+
+    /* Platform table */
+    .platform {
+      position: relative;
+      background: linear-gradient(180deg, #eef2fb 0%, #e4ebfb 100%);
+    }
+    .manifesto {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 12px;
+      text-align: start;
+    }
+    .manifesto thead th {
+      padding: 0 24px 4px;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-align: start;
+    }
+    .manifesto tbody tr {
+      --mx: 50%; --my: 50%;
+      position: relative;
+      background:
+        radial-gradient(420px circle at var(--mx) var(--my), rgba(90,169,255,.18), transparent 60%),
+        var(--paper);
+      box-shadow: 0 1px 0 var(--line), 0 18px 40px -28px rgba(19,40,106,.45);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .manifesto tbody tr:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 1px 0 var(--line), 0 26px 50px -24px rgba(19,40,106,.55);
+    }
+    .manifesto td { padding: 22px 24px; vertical-align: top; }
+    .manifesto td:first-child { border-start-start-radius: 18px; border-end-start-radius: 18px; width: 24%; }
+    .manifesto td:last-child { border-start-end-radius: 18px; border-end-end-radius: 18px; }
+    .area { display: flex; align-items: center; gap: 14px; }
+    .area .ico {
+      flex: none;
+      width: 48px; height: 48px;
+      display: grid; place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue), var(--sky));
+      color: #fff;
+      transition: transform .35s cubic-bezier(.3,1.6,.5,1);
+    }
+    .manifesto tr:hover .ico { transform: rotate(-10deg) scale(1.1); }
+    .area .ico svg { width: 24px; height: 24px; }
+    .area strong { font-size: 1.15rem; color: var(--navy); }
+    .today { color: var(--muted); }
+    .plan ul { margin: 0; padding-inline-start: 1.1em; }
+    .plan li { margin-bottom: 4px; }
+    .plan li::marker { color: var(--blue); }
+
+    /* ---------- CTA ---------- */
+    .cta {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      color: #fff;
+      text-align: center;
+      background: radial-gradient(120% 90% at 50% 0%, var(--blue) 0%, var(--navy) 65%);
+    }
+    .cta .section-title { color: #fff; font-size: clamp(2.4rem, 7vw, 4.4rem); }
+    .cta p { margin: 0 auto 36px; max-width: 46ch; color: #c9d6ff; font-size: 1.15rem; }
+    .box-stage { position: relative; width: 210px; height: 190px; margin: 0 auto 30px; }
+    .box-stage svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .mini-slip { transform: translateY(-90px); opacity: 0; }
+    .voted .mini-slip { animation: drop 1.1s cubic-bezier(.5,0,.6,1) forwards; }
+    @keyframes drop {
+      0% { transform: translateY(-110px) rotate(-12deg); opacity: 0; }
+      20% { opacity: 1; }
+      60% { transform: translateY(-20px) rotate(0); opacity: 1; }
+      100% { transform: translateY(40px); opacity: 1; }
+    }
+    .voted .box-body { animation: thump .4s .75s; transform-origin: 50% 100%; }
+    @keyframes thump { 50% { transform: scaleY(.94) scaleX(1.04); } }
+    .cta .actions { justify-content: center; }
+    .thanks {
+      min-height: 1.6em;
+      margin-top: 22px;
+      font-weight: 700;
+      color: var(--sun);
+      font-size: 1.2rem;
+    }
+    #confetti { position: fixed; inset: 0; pointer-events: none; z-index: 50; }
+
+    footer {
+      padding: 28px 20px 36px;
+      text-align: center;
+      font-size: .9rem;
+      color: #8e9bc4;
+      background: var(--navy);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .hero { padding-top: 56px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hero-kicker, .hero-meta, .actions { justify-content: center; }
+      .hero-meta { justify-content: center; }
+      .pillars { grid-template-columns: 1fr; }
+      .slip { width: min(270px, 72vw); }
+    }
+    @media (max-width: 720px) {
+      section { padding: 72px 16px; }
+      .hero { padding-inline: 16px; }
+      .manifesto, .manifesto tbody, .manifesto tr, .manifesto td { display: block; width: 100%; }
+      .manifesto thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      .manifesto tbody tr { margin-bottom: 16px; border-radius: 18px; }
+      .manifesto tbody tr:hover { transform: translateY(-2px); }
+      .manifesto td { padding: 6px 20px; }
+      .manifesto td:first-child { width: 100%; padding-top: 20px; padding-bottom: 10px; }
+      .manifesto td:last-child { padding-bottom: 20px; }
+      .manifesto td[data-label]::before {
+        content: attr(data-label);
+        display: block;
+        font-size: .85rem;
+        font-weight: 700;
+        color: var(--blue);
+      }
+      .btn { width: 100%; }
+      .actions { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+      .js .hero .ch, .js .hero .rise, .js .hero .slip-stage, .js .hero .stamp, .js .reveal { opacity: 1 !important; transform: none !important; }
+      .slip { transform: rotate(-4deg) !important; }
+      .voted .mini-slip { opacity: 1; transform: translateY(40px); }
+    }
   </style>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+
+  <header class="hero" id="top">
+    <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div>
+        <p class="hero-kicker rise" style="--d:0"><span class="dot" aria-hidden="true"></span>בחירות למועצת התלמידים</p>
+        <h1>
+          <span class="pre rise" style="--d:100">אמנת הבחירות של</span>
+          <span class="name" aria-label="נבו דוידזון">
+            <span class="w" aria-hidden="true"><span class="ch" style="--i:0">נ</span><span class="ch" style="--i:1">ב</span><span class="ch" style="--i:2">ו</span></span>
+            <br>
+            <span class="w" aria-hidden="true"><span class="ch" style="--i:3">ד</span><span class="ch" style="--i:4">ו</span><span class="ch" style="--i:5">י</span><span class="ch" style="--i:6">ד</span><span class="ch" style="--i:7">ז</span><span class="ch" style="--i:8">ו</span><span class="ch" style="--i:9">ן</span></span>
+          </span>
+        </h1>
+        <ul class="hero-meta rise" style="--d:750">
+          <li>כיתה <b>י׳11</b></li>
+          <li>בית ספר <b>הראשונים</b></li>
+        </ul>
+        <div class="actions rise" style="--d:900">
+          <a class="btn" href="#vote">אני רוצה להצביע לנבו</a>
+          <a class="btn btn-ghost" href="#platform">לקריאת האמנה</a>
+        </div>
+      </div>
+
+      <div class="slip-stage" aria-hidden="true">
+        <div class="slip" id="slip">
+          <div class="slip-top">פתק הצבעה, מועצת התלמידים</div>
+          <div class="letters">נבו</div>
+          <div>
+            <div class="slip-name">נבו דוידזון</div>
+            <div class="slip-sub">י׳11, בית ספר הראשונים</div>
+          </div>
+          <div class="stamp">הצבעתי!</div>
+          <div class="shine"></div>
+        </div>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#why" aria-label="גללו למטה"></a>
+  </header>
+
   <main>
-    <div class="avatar" aria-hidden="true">ND</div>
-    <h1>Nevo Davidson</h1>
-    <p class="tagline">Welcome! Here's where to find me.</p>
+    <section class="why" id="why">
+      <div class="wrap">
+        <blockquote class="reveal">
+          אני רץ למועצה כי אני מאמין שבית הספר שלנו יכול להיות מקום שכיף להגיע אליו בבוקר. בלי הבטחות ענק, עם שינויים אמיתיים שמרגישים כל יום.
+          <cite>נבו דוידזון, י׳11</cite>
+        </blockquote>
 
-    <!-- Edit these links, then push to main — the live page updates automatically. -->
-    <ul class="links">
-      <li><a class="primary" href="mailto:hello@example.com">Email me</a></li>
-      <li><a href="https://github.com/SaharDavidsonNice">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
-    </ul>
+        <div class="pillars">
+          <div class="pillar reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg>
+            <h3>מקשיב</h3>
+            <p>כל רעיון של תלמיד מקבל תשובה, גם אם התשובה היא "עוד לא".</p>
+          </div>
+          <div class="pillar reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <h3>עושה</h3>
+            <p>מתחיל מדברים קטנים שאפשר לסיים, ולא מחכה לסוף השנה.</p>
+          </div>
+          <div class="pillar reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <h3>מעדכן</h3>
+            <p>תדעו מה המועצה עושה, מה הצליח ומה עוד בדרך.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <footer>Last updated: <time datetime="2026-10-18">October 2026</time></footer>
+    <section class="platform" id="platform">
+      <div class="wrap">
+        <h2 class="section-title reveal">מה אני הולך לשנות</h2>
+        <p class="section-lead reveal">חמישה תחומים, בכל אחד מהם הבעיה שכולנו מכירים ומה אני אעשה כדי לפתור אותה.</p>
+
+        <table class="manifesto">
+          <thead>
+            <tr><th scope="col">תחום</th><th scope="col">מה קורה היום</th><th scope="col">מה אני אעשה</th></tr>
+          </thead>
+          <tbody>
+            <tr class="reveal">
+              <td>
+                <div class="area">
+                  <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>
+                  <strong>חיי בית הספר</strong>
+                </div>
+              </td>
+              <td class="today" data-label="מה קורה היום">ההפסקות קצרות ועמוסות, ואין בחצר מקום נעים לשבת בו.</td>
+              <td class="plan" data-label="מה אני אעשה">
+                <ul>
+                  <li>מוזיקה בחצר בהפסקה הגדולה, עם פלייליסט שהתלמידים בוחרים</li>
+                  <li>פינות ישיבה מוצלות בחצר</li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="reveal">
+              <td>
+                <div class="area">
+                  <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span>
+                  <strong>פעילויות ואירועים</strong>
+                </div>
+              </td>
+              <td class="today" data-label="מה קורה היום">ימי כיף ואירועים קורים רק כמה פעמים בשנה.</td>
+              <td class="plan" data-label="מה אני אעשה">
+                <ul>
+                  <li>טורנירים בין כיתות: כדורגל, כדורסל וטריוויה</li>
+                  <li>יום שיא שכבתי פעם בחודש</li>
+                  <li>מסיבת סוף שנה שהתלמידים מתכננים</li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="reveal">
+              <td>
+                <div class="area">
+                  <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg></span>
+                  <strong>מתקנים</strong>
+                </div>
+              </td>
+              <td class="today" data-label="מה קורה היום">ברזיות ושירותים לא תמיד תקינים, ואין איפה לחמם אוכל או להטעין טלפון.</td>
+              <td class="plan" data-label="מה אני אעשה">
+                <ul>
+                  <li>דיווח תקלות בסריקת QR ומעקב חודשי מול ההנהלה</li>
+                  <li>מיקרוגל ועמדות טעינה לתלמידים</li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="reveal">
+              <td>
+                <div class="area">
+                  <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+                  <strong>לימודים ועומס</strong>
+                </div>
+              </td>
+              <td class="today" data-label="מה קורה היום">כמה מבחנים נופלים באותו שבוע, ולפעמים באותו יום.</td>
+              <td class="plan" data-label="מה אני אעשה">
+                <ul>
+                  <li>לוח מבחנים שכבתי אחד שכולם רואים</li>
+                  <li>לפעול לכך שלא יהיו יותר משני מבחנים בשבוע</li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="reveal">
+              <td>
+                <div class="area">
+                  <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></span>
+                  <strong>תקשורת ושקיפות</strong>
+                </div>
+              </td>
+              <td class="today" data-label="מה קורה היום">רוב התלמידים לא יודעים מה המועצה עושה ואיך לפנות אליה.</td>
+              <td class="plan" data-label="מה אני אעשה">
+                <ul>
+                  <li>עדכון שבועי קצר בקבוצת השכבה</li>
+                  <li>תיבת הצעות דיגיטלית, ותשובה לכל הצעה תוך שבוע</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cta" id="vote">
+      <div class="wrap">
+        <div class="box-stage" id="boxStage" aria-hidden="true">
+          <svg viewBox="0 0 210 190">
+            <g class="mini-slip">
+              <rect x="80" y="10" width="50" height="64" rx="3" fill="#fff"/>
+              <rect x="84" y="14" width="42" height="56" rx="2" fill="none" stroke="#1d3fa8" stroke-width="2"/>
+              <text x="105" y="50" text-anchor="middle" font-family="Secular One, Arial" font-size="20" fill="#1d3fa8">נבו</text>
+            </g>
+            <g class="box-body">
+              <rect x="20" y="70" width="170" height="110" rx="12" fill="#5aa9ff" opacity=".25"/>
+              <rect x="20" y="70" width="170" height="110" rx="12" fill="none" stroke="#fff" stroke-width="3"/>
+              <rect x="20" y="62" width="170" height="20" rx="6" fill="#13286a" stroke="#fff" stroke-width="3"/>
+              <rect x="70" y="68" width="70" height="8" rx="4" fill="#0b1a44"/>
+              <text x="105" y="140" text-anchor="middle" font-family="Heebo, Arial" font-weight="700" font-size="18" fill="#fff">קלפי</text>
+            </g>
+          </svg>
+        </div>
+
+        <h2 class="section-title reveal">ביום הבחירות, בחרו בנבו</h2>
+        <p class="reveal">כל קול חשוב. תנו לי את ההזדמנות להפוך את הראשונים למקום שכולנו גאים בו.</p>
+        <div class="actions reveal">
+          <button class="btn" id="voteBtn" type="button">אני בעד נבו!</button>
+          <button class="btn btn-ghost" id="shareBtn" type="button">לשתף עם חברים</button>
+        </div>
+        <p class="thanks" id="thanks" role="status" aria-live="polite"></p>
+      </div>
+    </section>
   </main>
+
+  <footer>נבו דוידזון, י׳11, בית ספר הראשונים</footer>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add("loaded"); }); });
+
+      // Section reveal
+      var reveals = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window && !reduce) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+        reveals.forEach(function (el, i) {
+          el.style.transitionDelay = (el.parentElement.children.length > 2 ? (i % 5) * 70 : 0) + "ms";
+          io.observe(el);
+        });
+      } else {
+        reveals.forEach(function (el) { el.classList.add("in"); });
+      }
+
+      // Ballot slip tilt follows the pointer
+      var slip = document.getElementById("slip");
+      var hero = document.querySelector(".hero");
+      if (!reduce && window.matchMedia("(hover: hover)").matches) {
+        hero.addEventListener("pointermove", function (e) {
+          var r = slip.getBoundingClientRect();
+          var x = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
+          var y = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
+          slip.style.setProperty("--ry", (x * 30).toFixed(2) + "deg");
+          slip.style.setProperty("--rx", (-y * 24).toFixed(2) + "deg");
+          slip.style.setProperty("--gx", (50 + x * 120) + "%");
+          slip.style.setProperty("--gy", (50 + y * 120) + "%");
+        });
+        hero.addEventListener("pointerleave", function () {
+          slip.style.setProperty("--ry", "0deg");
+          slip.style.setProperty("--rx", "0deg");
+        });
+      }
+
+      // Spotlight on table rows
+      document.querySelectorAll(".manifesto tbody tr").forEach(function (row) {
+        row.addEventListener("pointermove", function (e) {
+          var r = row.getBoundingClientRect();
+          row.style.setProperty("--mx", (e.clientX - r.left) + "px");
+          row.style.setProperty("--my", (e.clientY - r.top) + "px");
+        });
+      });
+
+      // Confetti
+      var canvas = document.getElementById("confetti");
+      var ctx = canvas.getContext("2d");
+      var parts = [];
+      var colors = ["#ffc93c", "#ffffff", "#5aa9ff", "#1d3fa8", "#ff6b81"];
+      function resize() {
+        var dpr = window.devicePixelRatio || 1;
+        canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      resize();
+      addEventListener("resize", resize);
+      function burst(x, y) {
+        for (var i = 0; i < 160; i++) {
+          var a = Math.random() * Math.PI * 2, s = 4 + Math.random() * 9;
+          parts.push({
+            x: x, y: y, vx: Math.cos(a) * s, vy: Math.sin(a) * s - 6,
+            w: 6 + Math.random() * 6, h: 8 + Math.random() * 10,
+            r: Math.random() * 6, vr: (Math.random() - .5) * .4,
+            c: colors[i % colors.length], life: 0
+          });
+        }
+        if (parts.length === 160) requestAnimationFrame(tick);
+      }
+      function tick() {
+        ctx.clearRect(0, 0, innerWidth, innerHeight);
+        parts = parts.filter(function (p) { return p.life < 200 && p.y < innerHeight + 40; });
+        parts.forEach(function (p) {
+          p.life++; p.vy += .25; p.vx *= .985; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+          ctx.save();
+          ctx.translate(p.x, p.y); ctx.rotate(p.r);
+          ctx.fillStyle = p.c;
+          ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.cos(p.life / 8)));
+          ctx.restore();
+        });
+        if (parts.length) requestAnimationFrame(tick);
+        else ctx.clearRect(0, 0, innerWidth, innerHeight);
+      }
+
+      var stage = document.getElementById("boxStage");
+      var thanks = document.getElementById("thanks");
+      document.getElementById("voteBtn").addEventListener("click", function (e) {
+        stage.classList.remove("voted");
+        void stage.offsetWidth;
+        stage.classList.add("voted");
+        thanks.textContent = "תודה! נתראה בקלפי 🗳️";
+        if (!reduce) {
+          var r = e.currentTarget.getBoundingClientRect();
+          setTimeout(function () { burst(r.left + r.width / 2, r.top); }, 700);
+        }
+      });
+
+      document.getElementById("shareBtn").addEventListener("click", function () {
+        var data = { title: "נבו דוידזון למועצת התלמידים", text: "תקראו את האמנה של נבו דוידזון, י׳11", url: location.href };
+        if (navigator.share) {
+          navigator.share(data).catch(function () {});
+        } else if (navigator.clipboard) {
+          navigator.clipboard.writeText(location.href).then(function () { thanks.textContent = "הקישור הועתק, אפשר להדביק לחברים"; });
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
