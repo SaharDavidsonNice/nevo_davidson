@@ -8,7 +8,7 @@ import sys
 
 import qrcode
 
-DEFAULT_URL = "https://sahardavidsonnice.github.io/nevo_davidson/"
+DEFAULT_URL = "https://nevo2026.github.io/"
 
 
 def main() -> None:
